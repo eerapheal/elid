@@ -8,11 +8,11 @@ import { Github, Twitter, Linkedin } from 'lucide-react';
 const teamMembers = [
   {
     id: 1,
-    name: 'Chioma Okafor',
-    role: 'Event Coordinator',
-    specialty: 'Wedding Planning',
-    bio: 'Chioma brings over 10 years of creativity and precision to every luxury event.',
-    image: 'CO',
+    name: 'Lynda Eseji',
+    role: 'Founder & CEO',
+    specialty: 'Executive Planning',
+    bio: 'Lynda is the visionary behind ELID EVENT & MORE, dedicated to redefining luxury and precision in the event industry.',
+    image: 'LE',
     color: 'bg-primary/20'
   },
   {

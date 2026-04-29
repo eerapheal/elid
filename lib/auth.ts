@@ -37,7 +37,7 @@ export const authOptions: NextAuthOptions = {
             name: admin.name,
           };
         } catch (error) {
-          console.error('[v0] Auth error:', error);
+          console.error('[ELID] Auth error:', error);
           throw error;
         }
       },

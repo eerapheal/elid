@@ -129,7 +129,7 @@ export default function AdminDashboard() {
           </div>
           {isSidebarOpen && (
             <span className="text-xl font-black tracking-tighter text-foreground whitespace-nowrap transition-opacity">
-              ELID ADMIN<span className="text-accent">.</span>
+              ELID<span className="text-accent">.</span>
             </span>
           )}
         </div>

@@ -49,7 +49,7 @@ export default function AdminLoginPage() {
         router.push('/admin/dashboard');
       }
     } catch (error) {
-      console.error('[v0] Login error:', error);
+      console.error('[ELID] Login error:', error);
       toast.error('Login failed. Please try again.');
     } finally {
       setIsLoading(false);

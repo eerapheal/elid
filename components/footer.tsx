@@ -87,20 +87,20 @@ export default function Footer() {
                   <MapPin className="text-accent w-5 h-5" />
                 </div>
                 <span className="text-muted-foreground font-semibold leading-relaxed">
-                  123 Luxury Lane, Victoria Island, Lagos, Nigeria
+                  no 7 mbamalu estate praise center off jakpa road warri delta state
                 </span>
               </li>
               <li className="flex items-center space-x-4">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                   <Phone className="text-primary w-5 h-5" />
                 </div>
-                <span className="text-muted-foreground font-semibold">+234 800 EVENTS</span>
+                <span className="text-muted-foreground font-semibold">08163007792</span>
               </li>
               <li className="flex items-center space-x-4">
                 <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
                   <Mail className="text-secondary w-5 h-5" />
                 </div>
-                <span className="text-muted-foreground font-semibold">hello@elid.com</span>
+                <span className="text-muted-foreground font-semibold">esejilynda@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -110,7 +110,7 @@ export default function Footer() {
         <div className="border-t border-border pt-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-muted-foreground font-bold">
-              &copy; {currentYear} <span className="text-gradient">ELID.</span> All rights reserved.
+              &copy; {currentYear} <span className="text-gradient">ELID EVENT & MORE.</span> All rights reserved.
             </p>
             <div className="flex gap-8">
               <Link href="/privacy" className="text-muted-foreground font-semibold hover:text-foreground transition-colors">

@@ -8,25 +8,12 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Events & More - Professional Event Planning Services in Nigeria',
-  description: 'Professional event planning, wedding planning, modelling, ushering, and dancing services. Create unforgettable moments with Events & More.',
-  generator: 'v0.app',
+  title: 'ELID EVENT & MORE - Premium Event Planning & Management',
+  description: 'Exquisite event planning, luxury weddings, and professional entertainment services. Transform your vision into a legacy with ELID EVENT & MORE.',
+  generator: 'ELID',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/icon.png',
+    apple: '/icon.png',
   },
 }
 

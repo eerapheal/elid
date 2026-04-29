@@ -65,9 +65,9 @@ export default function CTA() {
           {/* Right - Quick Info Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              { icon: MapPin, title: 'Location', value: 'Victoria Island, Lagos', color: 'bg-white/10' },
-              { icon: Phone, title: 'Phone', value: '+234 800 EVENTS', color: 'bg-white/15' },
-              { icon: Mail, title: 'Email', value: 'hello@elid.com', color: 'bg-white/15' },
+              { icon: MapPin, title: 'Location', value: 'Warri, Delta State', color: 'bg-white/10' },
+              { icon: Phone, title: 'Phone', value: '08163007792', color: 'bg-white/15' },
+              { icon: Mail, title: 'Email', value: 'esejilynda@gmail.com', color: 'bg-white/15' },
               { icon: Clock, title: 'Hours', value: '9 AM - 6 PM', color: 'bg-white/10' },
             ].map((info, i) => (
               <motion.div

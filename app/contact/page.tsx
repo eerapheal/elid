@@ -60,7 +60,7 @@ export default function ContactPage() {
         toast.error('Failed to send message. Please try again.');
       }
     } catch (error) {
-      console.error('[v0] Contact error:', error);
+      console.error('[ELID] Contact error:', error);
       toast.error('An error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -71,19 +71,19 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Phone',
-      details: '+234 (0) XXX XXXX XXX',
-      link: 'tel:+234xxx',
+      details: '08163007792',
+      link: 'tel:08163007792',
     },
     {
       icon: Mail,
       title: 'Email',
-      details: 'hello@eventsandmore.ng',
-      link: 'mailto:hello@eventsandmore.ng',
+      details: 'esejilynda@gmail.com',
+      link: 'mailto:esejilynda@gmail.com',
     },
     {
       icon: MapPin,
       title: 'Location',
-      details: 'Lagos, Nigeria',
+      details: 'no 7 mbamalu estate praise center off jakpa road warri delta state',
       link: '#',
     },
     {

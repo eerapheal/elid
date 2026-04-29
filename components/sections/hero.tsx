@@ -50,8 +50,8 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl md:text-6xl lg:text-8xl font-black text-foreground leading-[0.9] tracking-tighter"
             >
-              We Create <br />
-              <span className="text-gradient">Experiences.</span>
+              ELID EVENT <br />
+              <span className="text-gradient">& MORE.</span>
             </motion.h1>
 
             <motion.p 
@@ -130,14 +130,9 @@ export default function Hero() {
               <motion.div 
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-0 left-0 w-64 h-64 glass rounded-[40px] z-20 flex items-center justify-center overflow-hidden shadow-2xl border-white/50"
+                className="absolute top-0 left-0 w-64 h-64 glass rounded-[40px] z-20 flex items-center justify-center overflow-hidden shadow-2xl border-white/50 p-4"
               >
-                <div className="p-8 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-tr from-primary to-secondary rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg">
-                    <Sparkles className="text-white w-8 h-8" />
-                  </div>
-                  <h3 className="text-xl font-black text-foreground leading-tight">Masterful Planning</h3>
-                </div>
+                <img src="/logo.png" alt="ELID Logo" className="w-full h-full object-contain" />
               </motion.div>
 
               <motion.div 
