@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Facebook, Instagram, Twitter, LinkedinIcon, Sparkles, Mail, Phone, MapPin } from 'lucide-react';
+import { MessageCircle, Camera, Send, Share2, Sparkles, Mail, Phone, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Footer() {
@@ -29,7 +29,7 @@ export default function Footer() {
               We don't just plan events; we create masterpieces. Elevating every moment into an extraordinary experience.
             </p>
             <div className="flex gap-4">
-              {[Facebook, Instagram, Twitter, LinkedinIcon].map((Icon, i) => (
+              {[MessageCircle, Camera, Send, Share2].map((Icon, i) => (
                 <motion.a
                   key={i}
                   href="#"
