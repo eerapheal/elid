@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
-import { Github, Twitter, Linkedin } from 'lucide-react';
 
 const teamMembers = [
   {
@@ -88,18 +87,6 @@ export default function Team() {
                 )}>
                   <span className="text-5xl font-black text-foreground/20 tracking-tighter">{member.image}</span>
                   
-                  {/* Social Overlay */}
-                  <div className="absolute inset-0 bg-primary/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
-                    {[Twitter, Linkedin, Github].map((Icon, i) => (
-                      <motion.button 
-                        key={i}
-                        whileHover={{ scale: 1.2, rotate: 10 }}
-                        className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg"
-                      >
-                        <Icon size={18} className="text-primary" />
-                      </motion.button>
-                    ))}
-                  </div>
                 </div>
 
                 {/* Content */}

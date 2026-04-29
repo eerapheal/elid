@@ -145,21 +145,6 @@ export default function ContactPage() {
                 })}
               </div>
 
-              {/* Social Links */}
-              <div className="mt-12 pt-8 border-t border-border">
-                <h3 className="font-semibold text-foreground mb-4">Follow Us</h3>
-                <div className="flex gap-4">
-                  {['Facebook', 'Instagram', 'Twitter', 'LinkedIn'].map((social) => (
-                    <a
-                      key={social}
-                      href="#"
-                      className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors text-primary text-sm font-medium"
-                    >
-                      {social.charAt(0)}
-                    </a>
-                  ))}
-                </div>
-              </div>
             </div>
 
             {/* Contact Form */}

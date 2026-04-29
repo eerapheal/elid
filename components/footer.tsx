@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { MessageCircle, Camera, Send, Share2, Sparkles, Mail, Phone, MapPin } from 'lucide-react';
+import { Sparkles, Mail, Phone, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Footer() {
@@ -28,18 +28,6 @@ export default function Footer() {
             <p className="text-muted-foreground font-medium leading-relaxed">
               We don't just plan events; we create masterpieces. Elevating every moment into an extraordinary experience.
             </p>
-            <div className="flex gap-4">
-              {[MessageCircle, Camera, Send, Share2].map((Icon, i) => (
-                <motion.a
-                  key={i}
-                  href="#"
-                  whileHover={{ y: -5, scale: 1.1 }}
-                  className="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-primary/10 transition-colors shadow-sm"
-                >
-                  <Icon size={20} className="text-foreground" />
-                </motion.a>
-              ))}
-            </div>
           </div>
 
           {/* Quick Links */}
