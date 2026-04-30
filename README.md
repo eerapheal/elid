@@ -1,4 +1,4 @@
-# Events & More - Professional Event Planning Website
+# LID EVENT - Professional Event Planning Website
 
 A modern, elegant event planning website for a Nigeria-based company offering comprehensive event services including wedding planning, corporate events, modelling, entertainment, and more.
 
@@ -208,7 +208,7 @@ The system includes professional email templates for:
 - **Admin Notification**: Alerts admin of new bookings
 - **Contact Confirmation**: Acknowledges client inquiries
 
-Templates use the Events & More brand colors and styling for professional appearance.
+Templates use the LID EVENT brand colors and styling for professional appearance.
 
 ## Deployment
 
@@ -275,4 +275,4 @@ For issues or questions about implementation, check the project documentation or
 
 ## License
 
-This project is provided as-is for the Events & More company.
+This project is provided as-is for the LID EVENT company.

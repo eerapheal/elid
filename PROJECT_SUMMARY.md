@@ -1,8 +1,8 @@
-# ELID EVENT & MORE - Project Summary
+# LID EVENT - Project Summary
 
 ## Overview
 
-A premium, full-stack event management platform for ELID EVENT & MORE, built with cutting-edge web technologies. The site features a modern "Vibrant SaaS" aesthetic with mesh gradients, glassmorphism, and fluid Framer Motion animations. It includes a high-performance booking system, admin dashboard, and automated email notifications.
+A premium, full-stack event management platform for LID EVENT, built with cutting-edge web technologies. The site features a modern "Vibrant SaaS" aesthetic with mesh gradients, glassmorphism, and fluid Framer Motion animations. It includes a high-performance booking system, admin dashboard, and automated email notifications.
 
 ## What Was Built
 
