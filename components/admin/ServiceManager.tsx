@@ -15,6 +15,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
+import ImageUpload from './ImageUpload';
 
 interface Service {
   _id?: string;

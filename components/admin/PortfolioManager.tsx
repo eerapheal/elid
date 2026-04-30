@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Plus, Trash2, Edit2, Calendar, Save, X, Image as ImageIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'sonner';
+import ImageUpload from './ImageUpload';
 
 interface PortfolioItem {
   _id?: string;

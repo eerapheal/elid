@@ -7,6 +7,7 @@ import { Plus, Trash2, Edit2, Star, Save, X, Quote } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { toast } from 'sonner';
+import ImageUpload from './ImageUpload';
 
 interface Testimonial {
   _id?: string;
