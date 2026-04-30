@@ -42,7 +42,7 @@ export function bookingConfirmationEmail(clientName: string, eventDate: string, 
   return `
     <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f9f9f9; padding: 20px;">
       <div style="background: linear-gradient(135deg, #7C3AED 0%, #C026D3 100%); color: white; padding: 40px; border-radius: 16px; text-align: center; margin-bottom: 30px;">
-        <h1 style="margin: 0; font-size: 32px; font-weight: 900; letter-spacing: -1px;">LID EVENT</h1>
+        <h1 style="margin: 0; font-size: 32px; font-weight: 900; letter-spacing: -1px;">LID EVENT & MORE</h1>
         <p style="margin: 10px 0 0 0; font-size: 14px; opacity: 0.9; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Premium Event Management</p>
       </div>
       
@@ -50,7 +50,7 @@ export function bookingConfirmationEmail(clientName: string, eventDate: string, 
         <h2 style="color: #7C3AED; margin-top: 0; font-weight: 900;">Booking Confirmation</h2>
         <p style="color: #666; line-height: 1.6;">Dear ${clientName},</p>
         
-        <p style="color: #666; line-height: 1.6;">Thank you for choosing LID EVENT for your special event! We have received your booking request and are excited to work with you.</p>
+        <p style="color: #666; line-height: 1.6;">Thank you for choosing LID EVENT & MORE for your special event! We have received your booking request and are excited to work with you.</p>
         
         <div style="background-color: #f5f5f5; padding: 20px; border-left: 4px solid #d4a574; margin: 20px 0; border-radius: 4px;">
           <p style="margin: 0; color: #2c1a4e;"><strong>Booking Details</strong></p>
@@ -61,7 +61,7 @@ export function bookingConfirmationEmail(clientName: string, eventDate: string, 
         <p style="color: #666; line-height: 1.6;">Our team will contact you shortly to discuss the details and confirm all arrangements.</p>
         
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #999; font-size: 12px; text-align: center;">
-          <p style="margin: 0;">© 2026 LID EVENT. All rights reserved.</p>
+          <p style="margin: 0;">© 2026 LID EVENT & MORE. All rights reserved.</p>
         </div>
       </div>
     </div>

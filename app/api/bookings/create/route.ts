@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
 
     await sendEmail({
       to: clientEmail,
-      subject: 'Booking Confirmation - LID EVENT',
+      subject: 'Booking Confirmation - LID EVENT & MORE',
       html: bookingConfirmation,
     });
 

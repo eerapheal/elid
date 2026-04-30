@@ -1,4 +1,4 @@
-# Deployment Checklist - LID EVENT
+# Deployment Checklist - LID EVENT & MORE
 
 Use this checklist to ensure everything is configured correctly before deploying to production.
 

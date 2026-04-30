@@ -10,7 +10,7 @@ const defaultTestimonials = [
     id: 1,
     name: 'Ngozi Obi',
     role: 'Wedding Client',
-    content: "LID EVENT made our wedding day absolutely perfect. Every detail was handled with such care and professionalism. We couldn't have asked for better!",
+    content: "LID EVENT & MORE made our wedding day absolutely perfect. Every detail was handled with such care and professionalism. We couldn't have asked for better!",
     rating: 5,
     color: 'border-primary/20 bg-primary/5'
   },
@@ -26,7 +26,7 @@ const defaultTestimonials = [
     id: 3,
     name: 'Zainab Hassan',
     role: 'Birthday Celebration',
-    content: 'I wanted my birthday to be special, and LID EVENT delivered beyond my expectations. The energy was perfect!',
+    content: 'I wanted my birthday to be special, and LID EVENT & MORE delivered beyond my expectations. The energy was perfect!',
     rating: 5,
     color: 'border-accent/20 bg-accent/5'
   },
@@ -34,7 +34,7 @@ const defaultTestimonials = [
     id: 4,
     name: 'Chima Eze',
     role: 'Corporate Client',
-    content: 'Working with LID EVENT for our annual conference was a game-changer. Professional, reliable, and delivered exceptional results.',
+    content: 'Working with LID EVENT & MORE for our annual conference was a game-changer. Professional, reliable, and delivered exceptional results.',
     rating: 5,
     color: 'border-chart-4/20 bg-chart-4/5'
   },
@@ -44,16 +44,16 @@ export default function Testimonials() {
   const siteData = useSiteData();
   const dbTestimonials = siteData?.testimonials || [];
 
-  const displayTestimonials = dbTestimonials.length > 0 
+  const displayTestimonials = dbTestimonials.length > 0
     ? dbTestimonials.map((t: any, i: number) => ({
-        ...t,
-        id: t._id,
-        name: t.clientName,
-        role: t.clientRole || 'Client',
-        content: t.message,
-        rating: t.rating || 5,
-        color: i % 2 === 0 ? 'border-primary/20 bg-primary/5' : 'border-secondary/20 bg-secondary/5'
-      }))
+      ...t,
+      id: t._id,
+      name: t.clientName,
+      role: t.clientRole || 'Client',
+      content: t.message,
+      rating: t.rating || 5,
+      color: i % 2 === 0 ? 'border-primary/20 bg-primary/5' : 'border-secondary/20 bg-secondary/5'
+    }))
     : defaultTestimonials;
 
   return (
@@ -61,7 +61,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-20 text-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -71,7 +71,7 @@ export default function Testimonials() {
             <span className="text-primary font-black uppercase tracking-widest text-sm">Testimonials</span>
             <div className="w-12 h-1.5 bg-primary rounded-full" />
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -97,7 +97,7 @@ export default function Testimonials() {
               )}
             >
               <Quote className="absolute top-8 right-8 w-16 h-16 text-foreground/5 -rotate-12 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-110" />
-              
+
               {/* Rating */}
               <div className="flex gap-1 mb-8">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (

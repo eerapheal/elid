@@ -12,7 +12,7 @@ const defaultTeamMembers = [
     name: 'Lynda Eseji',
     role: 'Founder & CEO',
     specialty: 'Executive Planning',
-    bio: 'Lynda is the visionary behind LID EVENT, dedicated to redefining luxury and precision in the event industry.',
+    bio: 'Lynda is the visionary behind LID EVENT & MORE, dedicated to redefining luxury and precision in the event industry.',
     image: 'LE',
     color: 'bg-primary/20'
   },
@@ -49,14 +49,14 @@ export default function Team() {
   const siteData = useSiteData();
   const dbMembers = siteData?.team || [];
 
-  const displayMembers = dbMembers.length > 0 
+  const displayMembers = dbMembers.length > 0
     ? dbMembers.map((member: any, i: number) => ({
-        ...member,
-        id: member._id,
-        specialty: member.specialty || '',
-        image: member.image || '',
-        color: i % 2 === 0 ? 'bg-primary/20' : 'bg-secondary/20'
-      }))
+      ...member,
+      id: member._id,
+      specialty: member.specialty || '',
+      image: member.image || '',
+      color: i % 2 === 0 ? 'bg-primary/20' : 'bg-secondary/20'
+    }))
     : defaultTeamMembers;
 
   return (
@@ -64,7 +64,7 @@ export default function Team() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-20 text-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -72,7 +72,7 @@ export default function Team() {
           >
             The Visionaries
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -101,10 +101,10 @@ export default function Team() {
                   member.color
                 )}>
                   {member.image ? (
-                    <Image 
-                      src={member.image} 
-                      alt={member.name} 
-                      fill 
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                   ) : (

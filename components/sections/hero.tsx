@@ -10,8 +10,8 @@ export default function Hero() {
     <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden pt-32 pb-20 linear-gradient">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
-        <motion.div 
-          animate={{ 
+        <motion.div
+          animate={{
             scale: [1, 1.2, 1],
             rotate: [0, 90, 0],
             opacity: [0.1, 0.2, 0.1]
@@ -19,8 +19,8 @@ export default function Hero() {
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-primary/20 blur-[120px] rounded-full"
         />
-        <motion.div 
-          animate={{ 
+        <motion.div
+          animate={{
             scale: [1, 1.1, 1],
             rotate: [0, -90, 0],
             opacity: [0.1, 0.15, 0.1]
@@ -34,7 +34,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="flex flex-col space-y-8 text-center lg:text-left">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -44,7 +44,7 @@ export default function Hero() {
               <span className="text-sm font-bold text-primary tracking-wide uppercase">Award-Winning Event Design</span>
             </motion.div>
 
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -54,7 +54,7 @@ export default function Hero() {
               <span className="text-gradient">EVENT.</span>
             </motion.h1>
 
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -63,7 +63,7 @@ export default function Hero() {
               Transforming ordinary moments into extraordinary memories. From luxury weddings to high-octane corporate events, we orchestrate perfection.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -82,7 +82,7 @@ export default function Hero() {
               </Link>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
@@ -119,7 +119,7 @@ export default function Hero() {
           </div>
 
           {/* Right Visual */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
@@ -127,15 +127,15 @@ export default function Hero() {
           >
             <div className="relative aspect-square w-full max-w-md mx-auto">
               {/* Glassy Floating Cards */}
-              <motion.div 
+              <motion.div
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute top-0 left-0 w-80 h-80 glass rounded-[40px] z-20 flex items-center justify-center overflow-hidden shadow-2xl border-white/50 p-6"
               >
-                <img src="/logo.png" alt="LID EVENT Logo" className="w-full h-full object-contain" />
+                <img src="/logo.png" alt="LID EVENT & MORE Logo" className="w-full h-full object-contain" />
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 animate={{ y: [0, 20, 0] }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                 className="absolute bottom-0 right-0 w-72 h-72 glass rounded-[50px] z-10 flex items-center justify-center overflow-hidden shadow-2xl border-white/50"

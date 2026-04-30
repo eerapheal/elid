@@ -1,4 +1,4 @@
-# LID EVENT - Quick Start Guide
+# LID EVENT & MORE - Quick Start Guide
 
 Get your event planning website up and running in minutes!
 

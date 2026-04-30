@@ -35,14 +35,14 @@ export async function POST(request: NextRequest) {
       <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #2c1a4e;">We Received Your Message</h2>
         <p>Hi ${name},</p>
-        <p>Thank you for reaching out to LID EVENT. We have received your inquiry and will get back to you shortly.</p>
-        <p style="color: #999; font-size: 12px; margin-top: 30px;">© 2026 LID EVENT. All rights reserved.</p>
+        <p>Thank you for reaching out to LID EVENT & MORE. We have received your inquiry and will get back to you shortly.</p>
+        <p style="color: #999; font-size: 12px; margin-top: 30px;">© 2026 LID EVENT & MORE. All rights reserved.</p>
       </div>
     `;
 
     await sendEmail({
       to: email,
-      subject: 'Thank you for contacting LID EVENT',
+      subject: 'Thank you for contacting LID EVENT & MORE',
       html: userConfirmation,
     });
 

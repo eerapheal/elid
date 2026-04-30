@@ -92,7 +92,7 @@ export const Admin = mongoose.models.Admin || mongoose.model('Admin', adminSchem
 
 // Site Settings Schema
 const settingsSchema = new mongoose.Schema({
-  siteName: { type: String, default: 'LID EVENT' },
+  siteName: { type: String, default: 'LID EVENT & MORE' },
   contactEmail: { type: String, default: 'esejilynda@gmail.com' },
   contactPhone: { type: String, default: '08163007792' },
   address: { type: String, default: 'no 7 mbamalu estate praise center off jakpa road warri delta state' },

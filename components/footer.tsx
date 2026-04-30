@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className="bg-background border-t border-border pt-24 pb-12 overflow-hidden relative">
       {/* Background Decorative Element */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full -z-10" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
@@ -39,8 +39,8 @@ export default function Footer() {
             <ul className="space-y-4">
               {['Home', 'Services', 'Portfolio', 'Team', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Link 
-                    href={item === 'Home' ? '/' : `#${item.toLowerCase()}`} 
+                  <Link
+                    href={item === 'Home' ? '/' : `#${item.toLowerCase()}`}
                     className="text-muted-foreground font-semibold hover:text-primary transition-all flex items-center group"
                   >
                     <span className="w-0 group-hover:w-4 h-0.5 bg-primary mr-0 group-hover:mr-2 transition-all duration-300" />
@@ -57,8 +57,8 @@ export default function Footer() {
             <ul className="space-y-4">
               {['Event Planning', 'Wedding Planning', 'Entertainment', 'Modelling Services'].map((item) => (
                 <li key={item}>
-                  <Link 
-                    href="#services" 
+                  <Link
+                    href="#services"
                     className="text-muted-foreground font-semibold hover:text-secondary transition-all flex items-center group"
                   >
                     <span className="w-0 group-hover:w-4 h-0.5 bg-secondary mr-0 group-hover:mr-2 transition-all duration-300" />
@@ -101,7 +101,7 @@ export default function Footer() {
         <div className="border-t border-border pt-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-muted-foreground font-bold">
-              &copy; {currentYear} <span className="text-gradient">LID EVENT.</span> All rights reserved.
+              &copy; {currentYear} <span className="text-gradient">LID EVENT & MORE.</span> All rights reserved.
             </p>
             <div className="flex gap-8">
               <Link href="/privacy" className="text-muted-foreground font-semibold hover:text-foreground transition-colors">

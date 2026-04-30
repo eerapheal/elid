@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 async function main() {
-  console.log('🚀 LID EVENT - Automatic Admin Creation');
+  console.log('🚀 LID EVENT & MORE - Automatic Admin Creation');
 
   // Load .env.local
   let mongoUri = '';

@@ -9,8 +9,8 @@ import CTA from '@/components/sections/cta';
 import Footer from '@/components/footer';
 
 export const metadata: Metadata = {
-  title: 'Home | LID EVENT - Premium Event Planning',
-  description: 'Welcome to LID EVENT, your premier partner for luxury weddings, corporate events, and exquisite entertainment services in Nigeria.',
+  title: 'Home | LID EVENT & MORE - Premium Event Planning',
+  description: 'Welcome to LID EVENT & MORE, your premier partner for luxury weddings, corporate events, and exquisite entertainment services in Nigeria.',
   alternates: {
     canonical: '/',
   },
@@ -20,7 +20,7 @@ export default function Home() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'LID EVENT & MORE',
+    name: 'LID EVENT & MORE & MORE',
     image: 'https://elidevent.com/logo.png',
     '@id': 'https://elidevent.com',
     url: 'https://elidevent.com',

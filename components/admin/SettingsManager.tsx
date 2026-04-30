@@ -3,11 +3,11 @@
 import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { 
-  Save, 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Save,
+  Mail,
+  Phone,
+  MapPin,
   Globe,
   Share2,
   ExternalLink,
@@ -38,7 +38,7 @@ interface Settings {
 
 export default function SettingsManager() {
   const [settings, setSettings] = useState<Settings>({
-    siteName: 'LID EVENT',
+    siteName: 'LID EVENT & MORE',
     contactEmail: '',
     contactPhone: '',
     address: '',
@@ -106,12 +106,12 @@ export default function SettingsManager() {
             <h3 className="text-xl font-black text-foreground flex items-center">
               <Globe className="mr-2 text-primary" /> General Info
             </h3>
-            
+
             <div className="space-y-4">
               <div className="space-y-2">
                 <label className="text-xs font-black uppercase tracking-widest text-muted-foreground">Site Name</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   value={settings.siteName}
                   onChange={(e) => setSettings({ ...settings, siteName: e.target.value })}
                   className="w-full bg-muted/50 border border-white/10 rounded-2xl px-6 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
@@ -121,8 +121,8 @@ export default function SettingsManager() {
                 <label className="text-xs font-black uppercase tracking-widest text-muted-foreground">Contact Email</label>
                 <div className="relative">
                   <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     value={settings.contactEmail}
                     onChange={(e) => setSettings({ ...settings, contactEmail: e.target.value })}
                     className="w-full bg-muted/50 border border-white/10 rounded-2xl pl-12 pr-6 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
@@ -133,8 +133,8 @@ export default function SettingsManager() {
                 <label className="text-xs font-black uppercase tracking-widest text-muted-foreground">Contact Phone</label>
                 <div className="relative">
                   <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     value={settings.contactPhone}
                     onChange={(e) => setSettings({ ...settings, contactPhone: e.target.value })}
                     className="w-full bg-muted/50 border border-white/10 rounded-2xl pl-12 pr-6 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
@@ -145,7 +145,7 @@ export default function SettingsManager() {
                 <label className="text-xs font-black uppercase tracking-widest text-muted-foreground">Address</label>
                 <div className="relative">
                   <MapPin className="absolute left-4 top-4 w-4 h-4 text-muted-foreground" />
-                  <textarea 
+                  <textarea
                     value={settings.address}
                     onChange={(e) => setSettings({ ...settings, address: e.target.value })}
                     className="w-full bg-muted/50 border border-white/10 rounded-2xl pl-12 pr-6 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all min-h-[100px]"
@@ -160,14 +160,14 @@ export default function SettingsManager() {
             <h3 className="text-xl font-black text-foreground flex items-center">
               <Instagram className="mr-2 text-primary" /> Social Presence
             </h3>
-            
+
             <div className="space-y-4">
               <div className="space-y-2">
                 <label className="text-xs font-black uppercase tracking-widest text-muted-foreground">Instagram</label>
                 <div className="relative">
                   <Instagram className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     placeholder="https://instagram.com/..."
                     value={settings.socialLinks?.instagram || ''}
                     onChange={(e) => setSettings({ ...settings, socialLinks: { ...(settings.socialLinks || {}), instagram: e.target.value } })}
@@ -179,8 +179,8 @@ export default function SettingsManager() {
                 <label className="text-xs font-black uppercase tracking-widest text-muted-foreground">Facebook</label>
                 <div className="relative">
                   <Facebook className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     placeholder="https://facebook.com/..."
                     value={settings.socialLinks?.facebook || ''}
                     onChange={(e) => setSettings({ ...settings, socialLinks: { ...(settings.socialLinks || {}), facebook: e.target.value } })}
@@ -192,8 +192,8 @@ export default function SettingsManager() {
                 <label className="text-xs font-black uppercase tracking-widest text-muted-foreground">Twitter / X</label>
                 <div className="relative">
                   <Twitter className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     placeholder="https://twitter.com/..."
                     value={settings.socialLinks?.twitter || ''}
                     onChange={(e) => setSettings({ ...settings, socialLinks: { ...(settings.socialLinks || {}), twitter: e.target.value } })}
@@ -205,8 +205,8 @@ export default function SettingsManager() {
                 <label className="text-xs font-black uppercase tracking-widest text-muted-foreground">LinkedIn</label>
                 <div className="relative">
                   <Linkedin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     placeholder="https://linkedin.com/in/..."
                     value={settings.socialLinks?.linkedin || ''}
                     onChange={(e) => setSettings({ ...settings, socialLinks: { ...(settings.socialLinks || {}), linkedin: e.target.value } })}
@@ -219,8 +219,8 @@ export default function SettingsManager() {
         </div>
 
         <div className="flex justify-end">
-          <Button 
-            type="submit" 
+          <Button
+            type="submit"
             disabled={isSaving}
             className="rounded-2xl bg-primary hover:bg-primary/90 font-black px-12 py-6 text-lg h-auto shadow-2xl shadow-primary/30"
           >
