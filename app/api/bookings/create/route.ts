@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
 
     await sendEmail({
       to: clientEmail,
-      subject: 'Booking Confirmation - Events & More',
+      subject: 'Booking Confirmation - LID EVENT',
       html: bookingConfirmation,
     });
 
@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
       { status: 201 }
     );
   } catch (error) {
-    console.error('[ELID] Booking error:', error);
+    console.error('[LID] Booking error:', error);
     return NextResponse.json(
       { error: 'Failed to create booking' },
       { status: 500 }
