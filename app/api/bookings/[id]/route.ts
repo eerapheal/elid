@@ -4,11 +4,12 @@ import { Booking } from '@/models';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     await dbConnect();
-    const booking = await Booking.findById(params.id);
+    const booking = await Booking.findById(id);
 
     if (!booking) {
       return NextResponse.json({ error: 'Booking not found' }, { status: 404 });

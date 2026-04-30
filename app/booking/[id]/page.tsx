@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Calendar, 
@@ -37,7 +37,8 @@ interface Booking {
   createdAt: string;
 }
 
-export default function BookingDetails({ params }: { params: { id: string } }) {
+export default function BookingDetails({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = React.use(params);
   const [booking, setBooking] = useState<Booking | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -45,7 +46,7 @@ export default function BookingDetails({ params }: { params: { id: string } }) {
   useEffect(() => {
     const fetchBooking = async () => {
       try {
-        const response = await fetch(`/api/bookings/${params.id}`);
+        const response = await fetch(`/api/bookings/${id}`);
         if (response.ok) {
           const data = await response.json();
           setBooking(data);

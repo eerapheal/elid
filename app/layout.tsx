@@ -11,14 +11,14 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://elidevent.com'),
   title: {
-    default: 'LID EVENT - Premium Event Planning & Management',
-    template: '%s | LID EVENT'
+    default: 'LID EVENT & MORE - Premium Event Planning & Management',
+    template: '%s | LID EVENT & MORE'
   },
-  description: 'Exquisite event planning, luxury weddings, and professional entertainment services. Transform your vision into a legacy with LID EVENT.',
+  description: 'Exquisite event planning, luxury weddings, and professional entertainment services. Transform your vision into a legacy with LID EVENT & MORE.',
   keywords: ['event planning', 'wedding planner', 'professional dancers', 'ushers', 'modelling services', 'MC', 'Warri events', 'Nigeria events'],
-  authors: [{ name: 'LID EVENT' }],
-  creator: 'LID EVENT',
-  publisher: 'LID EVENT',
+  authors: [{ name: 'LID EVENT & MORE' }],
+  creator: 'LID EVENT & MORE',
+  publisher: 'LID EVENT & MORE',
   formatDetection: {
     email: false,
     address: false,
@@ -28,16 +28,16 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'LID EVENT - Premium Event Planning & Management',
+    title: 'LID EVENT & MORE - Premium Event Planning & Management',
     description: 'Exquisite event planning, luxury weddings, and professional entertainment services.',
     url: 'https://elidevent.com',
-    siteName: 'LID EVENT',
+    siteName: 'LID EVENT & MORE',
     images: [
       {
         url: '/og-image.png', // We should ensure this exists or create a placeholder
         width: 1200,
         height: 630,
-        alt: 'LID EVENT & MORE',
+        alt: 'LID EVENT & MORE & MORE',
       },
     ],
     locale: 'en_US',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LID EVENT - Premium Event Planning & Management',
+    title: 'LID EVENT & MORE - Premium Event Planning & Management',
     description: 'Exquisite event planning, luxury weddings, and professional entertainment services.',
     images: ['/og-image.png'],
   },

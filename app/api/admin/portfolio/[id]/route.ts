@@ -6,9 +6,10 @@ import { authOptions } from '@/lib/auth';
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const session = await getServerSession(authOptions);
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -16,7 +17,7 @@ export async function PUT(
 
     await dbConnect();
     const body = await request.json();
-    const item = await Portfolio.findByIdAndUpdate(params.id, body, { new: true });
+    const item = await Portfolio.findByIdAndUpdate(id, body, { new: true });
 
     if (!item) {
       return NextResponse.json({ error: 'Item not found' }, { status: 404 });
@@ -30,16 +31,17 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const session = await getServerSession(authOptions);
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
     await dbConnect();
-    const item = await Portfolio.findByIdAndDelete(params.id);
+    const item = await Portfolio.findByIdAndDelete(id);
 
     if (!item) {
       return NextResponse.json({ error: 'Item not found' }, { status: 404 });

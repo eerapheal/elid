@@ -100,7 +100,7 @@ export default function Team() {
                   "aspect-[4/5] rounded-[32px] flex items-center justify-center transition-all duration-500 relative overflow-hidden",
                   member.color
                 )}>
-                  {member.image ? (
+                  {member?.image ? (
                     <Image
                       src={member.image}
                       alt={member.name}

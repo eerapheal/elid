@@ -6,9 +6,10 @@ import { authOptions } from '@/lib/auth';
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const session = await getServerSession(authOptions);
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -16,7 +17,7 @@ export async function PUT(
 
     await dbConnect();
     const body = await request.json();
-    const member = await TeamMember.findByIdAndUpdate(params.id, body, { new: true });
+    const member = await TeamMember.findByIdAndUpdate(id, body, { new: true });
 
     if (!member) {
       return NextResponse.json({ error: 'Member not found' }, { status: 404 });
@@ -30,16 +31,17 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const session = await getServerSession(authOptions);
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
     await dbConnect();
-    const member = await TeamMember.findByIdAndDelete(params.id);
+    const member = await TeamMember.findByIdAndDelete(id);
 
     if (!member) {
       return NextResponse.json({ error: 'Member not found' }, { status: 404 });
