@@ -3,14 +3,16 @@
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import { useSiteData } from '@/context/SiteContext';
 
-const teamMembers = [
+const defaultTeamMembers = [
   {
     id: 1,
     name: 'Lynda Eseji',
     role: 'Founder & CEO',
     specialty: 'Executive Planning',
-    bio: 'Lynda is the visionary behind ELID EVENT & MORE, dedicated to redefining luxury and precision in the event industry.',
+    bio: 'Lynda is the visionary behind LID EVENT, dedicated to redefining luxury and precision in the event industry.',
     image: 'LE',
     color: 'bg-primary/20'
   },
@@ -44,8 +46,21 @@ const teamMembers = [
 ];
 
 export default function Team() {
+  const siteData = useSiteData();
+  const dbMembers = siteData?.team || [];
+
+  const displayMembers = dbMembers.length > 0 
+    ? dbMembers.map((member: any, i: number) => ({
+        ...member,
+        id: member._id,
+        specialty: member.specialty || '',
+        image: member.image || '',
+        color: i % 2 === 0 ? 'bg-primary/20' : 'bg-secondary/20'
+      }))
+    : defaultTeamMembers;
+
   return (
-    <section id="team" className="py-24 md:py-40 bg-background relative overflow-hidden">
+    <section id="team" className="py-24 md:py-40 bg-background linear-gradient relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-20 text-center">
@@ -69,7 +84,7 @@ export default function Team() {
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map((member, index) => (
+          {displayMembers.map((member: any, index: number) => (
             <motion.div
               key={member.id}
               initial={{ opacity: 0, y: 30 }}
@@ -85,8 +100,16 @@ export default function Team() {
                   "aspect-[4/5] rounded-[32px] flex items-center justify-center transition-all duration-500 relative overflow-hidden",
                   member.color
                 )}>
-                  <span className="text-5xl font-black text-foreground/20 tracking-tighter">{member.image}</span>
-                  
+                  {member.image ? (
+                    <Image 
+                      src={member.image} 
+                      alt={member.name} 
+                      fill 
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  ) : (
+                    <span className="text-5xl font-black text-foreground/20 tracking-tighter">{member.name[0]}</span>
+                  )}
                 </div>
 
                 {/* Content */}

@@ -23,6 +23,7 @@ export default function Navigation() {
     { label: 'Home', href: '/' },
     { label: 'Services', href: '/#services' },
     { label: 'Portfolio', href: '/#portfolio' },
+    { label: 'Track', href: '/booking/track' },
     { label: 'Team', href: '/#team' },
     { label: 'Testimonials', href: '/#testimonials' },
     { label: 'Contact', href: '/contact' },
@@ -51,7 +52,7 @@ export default function Navigation() {
               <Sparkles className="text-white w-6 h-6" />
             </motion.div>
             <span className="text-2xl font-black tracking-tighter text-foreground group-hover:text-primary transition-colors">
-              ELID<span className="text-accent">.</span>
+              LID<span className="text-accent">.</span>
             </span>
           </Link>
 

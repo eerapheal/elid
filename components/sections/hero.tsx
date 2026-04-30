@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden pt-32 pb-20 mesh-gradient">
+    <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden pt-32 pb-20 linear-gradient">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
         <motion.div 
@@ -50,8 +50,8 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl md:text-6xl lg:text-8xl font-black text-foreground leading-[0.9] tracking-tighter"
             >
-              ELID EVENT <br />
-              <span className="text-gradient">& MORE.</span>
+              LID <br />
+              <span className="text-gradient">EVENT.</span>
             </motion.h1>
 
             <motion.p 
@@ -130,9 +130,9 @@ export default function Hero() {
               <motion.div 
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-0 left-0 w-64 h-64 glass rounded-[40px] z-20 flex items-center justify-center overflow-hidden shadow-2xl border-white/50 p-4"
+                className="absolute top-0 left-0 w-80 h-80 glass rounded-[40px] z-20 flex items-center justify-center overflow-hidden shadow-2xl border-white/50 p-6"
               >
-                <img src="/logo.png" alt="ELID Logo" className="w-full h-full object-contain" />
+                <img src="/logo.png" alt="LID EVENT Logo" className="w-full h-full object-contain" />
               </motion.div>
 
               <motion.div 

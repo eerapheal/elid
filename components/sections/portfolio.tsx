@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { ArrowUpRight, Filter } from 'lucide-react';
 import { useState } from 'react';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { useSiteData } from '@/context/SiteContext';
 
-const categories = ['All', 'Wedding', 'Corporate', 'Festival', 'Private', 'Celebration'];
-
-const portfolioItems = [
+const defaultPortfolioItems = [
   {
     id: 1,
     title: 'Luxury Wedding Reception',
@@ -67,13 +67,29 @@ const portfolioItems = [
 
 export default function Portfolio() {
   const [filter, setFilter] = useState('All');
+  const siteData = useSiteData();
+  const dbItems = siteData?.portfolio || [];
+
+  const displayItems = dbItems.length > 0 
+    ? dbItems.map((item: any, i: number) => ({
+        ...item,
+        id: item._id,
+        category: item.category || 'Event',
+        services: item.services || [],
+        description: item.description || '',
+        image: item.images?.[0] || '',
+        color: i % 2 === 0 ? 'from-primary/20 to-secondary/20' : 'from-accent/20 to-primary/20'
+      }))
+    : defaultPortfolioItems;
 
   const filteredItems = filter === 'All' 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.category === filter);
+    ? displayItems 
+    : displayItems.filter((item: any) => item.category === filter);
+
+  const categories = ['All', ...new Set(displayItems.map((item: any) => item.category))];
 
   return (
-    <section id="portfolio" className="py-24 md:py-40 bg-muted/20 relative overflow-hidden">
+    <section id="portfolio" className="py-24 md:py-40 bg-muted/20 linear-gradient relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-20 flex flex-col lg:flex-row lg:items-end justify-between gap-12">
@@ -142,7 +158,7 @@ export default function Portfolio() {
                 "h-64 bg-gradient-to-br transition-all duration-700 relative overflow-hidden",
                 item.color
               )}>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center z-20">
                   <motion.div 
                     whileHover={{ scale: 1.2, rotate: 45 }}
                     className="w-16 h-16 bg-white/30 backdrop-blur-xl rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 border border-white/40"
@@ -150,14 +166,24 @@ export default function Portfolio() {
                     <ArrowUpRight className="text-white w-8 h-8" />
                   </motion.div>
                 </div>
-                <div className="absolute top-6 right-6">
+                {item.image && (
+                  <Image 
+                    src={item.image} 
+                    alt={item.title} 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                )}
+                <div className="absolute top-6 right-6 z-10">
                   <Badge className="bg-white/50 backdrop-blur-md text-foreground border-none font-bold px-4 py-1 rounded-full uppercase tracking-widest text-[10px]">
                     {item.category}
                   </Badge>
                 </div>
-                <div className="h-full flex items-center justify-center opacity-30 group-hover:opacity-10 transition-opacity">
-                  <span className="text-2xl font-black uppercase tracking-[0.2em] text-foreground/50 rotate-12">{item.image}</span>
-                </div>
+                {!item.image && (
+                  <div className="h-full flex items-center justify-center opacity-30 group-hover:opacity-10 transition-opacity">
+                    <span className="text-2xl font-black uppercase tracking-[0.2em] text-foreground/50 rotate-12">{item.title}</span>
+                  </div>
+                )}
               </div>
 
               {/* Content */}

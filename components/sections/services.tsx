@@ -3,8 +3,9 @@
 import { motion } from 'framer-motion';
 import { Heart, Music, Users, Sparkles, Mic2, Camera, ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useSiteData } from '@/context/SiteContext';
 
-const services = [
+const defaultServices = [
   {
     id: 1,
     name: 'Event Planning',
@@ -68,8 +69,23 @@ const services = [
 ];
 
 export default function Services() {
+  const siteData = useSiteData();
+  const dbServices = siteData?.services || [];
+  
+  const displayServices = dbServices.length > 0 
+    ? dbServices.map((s: any, i: number) => ({
+        ...s,
+        id: s._id,
+        icon: Sparkles, // Default icon for dynamic services
+        color: i % 2 === 0 ? 'bg-primary/20' : 'bg-secondary/20',
+        iconColor: i % 2 === 0 ? 'text-primary' : 'text-secondary',
+        gridClass: i === 0 ? 'md:col-span-2 md:row-span-2' : 'md:col-span-1 md:row-span-1',
+        gradient: i % 2 === 0 ? 'from-primary/20 via-primary/5 to-transparent' : 'from-secondary/20 via-secondary/5 to-transparent'
+      }))
+    : defaultServices;
+
   return (
-    <section id="services" className="py-24 md:py-40 bg-background relative overflow-hidden">
+    <section id="services" className="py-24 md:py-40 bg-background linear-gradient relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="mb-20">
@@ -107,7 +123,7 @@ export default function Services() {
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 gap-6">
-          {services.map((service, index) => {
+          {displayServices.map((service: any, index: number) => {
             const IconComponent = service.icon;
             return (
               <motion.div

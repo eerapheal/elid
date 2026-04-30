@@ -1,11 +1,14 @@
 'use client';
 
 import Link from 'next/link';
+import { useSiteData } from '@/context/SiteContext';
 import { Sparkles, Mail, Phone, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const siteData = useSiteData();
+  const settings = siteData?.settings || {};
 
   return (
     <footer className="bg-background border-t border-border pt-24 pb-12 overflow-hidden relative">
@@ -22,7 +25,7 @@ export default function Footer() {
                 <Sparkles className="text-white w-6 h-6" />
               </div>
               <span className="text-2xl font-black tracking-tighter text-foreground">
-                ELID<span className="text-accent">.</span>
+                LID<span className="text-accent">.</span>
               </span>
             </Link>
             <p className="text-muted-foreground font-medium leading-relaxed">
@@ -75,20 +78,20 @@ export default function Footer() {
                   <MapPin className="text-accent w-5 h-5" />
                 </div>
                 <span className="text-muted-foreground font-semibold leading-relaxed">
-                  no 7 mbamalu estate praise center off jakpa road warri delta state
+                  {settings.address || 'no 7 mbamalu estate praise center off jakpa road warri delta state'}
                 </span>
               </li>
               <li className="flex items-center space-x-4">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                   <Phone className="text-primary w-5 h-5" />
                 </div>
-                <span className="text-muted-foreground font-semibold">08163007792</span>
+                <span className="text-muted-foreground font-semibold">{settings.contactPhone || '08163007792'}</span>
               </li>
               <li className="flex items-center space-x-4">
                 <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
                   <Mail className="text-secondary w-5 h-5" />
                 </div>
-                <span className="text-muted-foreground font-semibold">esejilynda@gmail.com</span>
+                <span className="text-muted-foreground font-semibold">{settings.contactEmail || 'esejilynda@gmail.com'}</span>
               </li>
             </ul>
           </div>
@@ -98,7 +101,7 @@ export default function Footer() {
         <div className="border-t border-border pt-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-muted-foreground font-bold">
-              &copy; {currentYear} <span className="text-gradient">ELID EVENT & MORE.</span> All rights reserved.
+              &copy; {currentYear} <span className="text-gradient">LID EVENT.</span> All rights reserved.
             </p>
             <div className="flex gap-8">
               <Link href="/privacy" className="text-muted-foreground font-semibold hover:text-foreground transition-colors">

@@ -89,3 +89,20 @@ const adminSchema = new mongoose.Schema({
 });
 
 export const Admin = mongoose.models.Admin || mongoose.model('Admin', adminSchema);
+
+// Site Settings Schema
+const settingsSchema = new mongoose.Schema({
+  siteName: { type: String, default: 'LID EVENT' },
+  contactEmail: { type: String, default: 'esejilynda@gmail.com' },
+  contactPhone: { type: String, default: '08163007792' },
+  address: { type: String, default: 'no 7 mbamalu estate praise center off jakpa road warri delta state' },
+  socialLinks: {
+    instagram: String,
+    facebook: String,
+    twitter: String,
+    linkedin: String,
+  },
+  updatedAt: { type: Date, default: Date.now },
+});
+
+export const SiteSettings = mongoose.models.SiteSettings || mongoose.model('SiteSettings', settingsSchema);

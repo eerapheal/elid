@@ -8,11 +8,12 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
-import { ArrowRight, CheckCircle, Sparkles, Calendar, User, Mail, Phone, MapPin, Users, Wallet } from 'lucide-react';
+import { ArrowRight, CheckCircle, Sparkles, Calendar, User, Mail, Phone, MapPin, Users, Wallet, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
-const services = [
+const servicesList = [
   'Event Planning',
   'Wedding Planning',
   'Professional Dancers',
@@ -24,6 +25,7 @@ const services = [
 export default function BookingPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [bookingId, setBookingId] = useState<string | null>(null);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     clientName: '',
@@ -82,6 +84,8 @@ export default function BookingPage() {
       });
 
       if (response.ok) {
+        const data = await response.json();
+        setBookingId(data.bookingId);
         setIsSuccess(true);
         setFormData({
           clientName: '',
@@ -100,7 +104,7 @@ export default function BookingPage() {
         toast.error('Failed to submit booking. Please try again.');
       }
     } catch (error) {
-      console.error('[ELID] Booking error:', error);
+      console.error('[LID] Booking error:', error);
       toast.error('An error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -108,7 +112,7 @@ export default function BookingPage() {
   };
 
   return (
-    <main className="min-h-screen bg-background mesh-gradient selection:bg-primary selection:text-white">
+    <main className="min-h-screen bg-background linear-gradient selection:bg-primary selection:text-white">
       <Navigation />
 
       <section className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden">
@@ -308,7 +312,7 @@ export default function BookingPage() {
                     </div>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                      {services.map((service) => (
+                      {servicesList.map((service) => (
                         <motion.button
                           key={service}
                           type="button"
@@ -377,15 +381,35 @@ export default function BookingPage() {
                   Magic is <br />
                   <span className="text-gradient">Underway.</span>
                 </h1>
-                <p className="text-xl text-muted-foreground font-medium mb-12 leading-relaxed">
-                  We've received your vision. Our team is already brainstorming to make it a reality. Expect a call within the next 24 hours.
+                <p className="text-xl text-muted-foreground font-medium mb-8 leading-relaxed">
+                  We've received your vision. Our team is already brainstorming to make it a reality.
                 </p>
-                <Button
-                  onClick={() => setIsSuccess(false)}
-                  className="h-16 px-12 rounded-full bg-foreground text-background font-black text-xl hover:bg-foreground/90 transition-all"
-                >
-                  Book Another One
-                </Button>
+                
+                {bookingId && (
+                  <div className="mb-12 p-6 rounded-3xl bg-primary/5 border border-primary/20 inline-block">
+                    <p className="text-sm font-black uppercase tracking-widest text-muted-foreground mb-4">Your Tracking Page</p>
+                    <Link href={`/booking/${bookingId}`}>
+                      <Button variant="outline" className="rounded-2xl border-primary text-primary font-black px-8 py-4 h-auto hover:bg-primary hover:text-white transition-all">
+                        <ExternalLink className="mr-2 w-5 h-5" />
+                        Track Booking Status
+                      </Button>
+                    </Link>
+                  </div>
+                )}
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <Button
+                    onClick={() => setIsSuccess(false)}
+                    className="h-16 px-12 rounded-full bg-foreground text-background font-black text-xl hover:bg-foreground/90 transition-all w-full sm:w-auto"
+                  >
+                    Book Another One
+                  </Button>
+                  <Link href="/">
+                    <Button variant="ghost" className="h-16 px-12 rounded-full font-black text-xl w-full sm:w-auto">
+                      Back to Home
+                    </Button>
+                  </Link>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
@@ -396,4 +420,3 @@ export default function BookingPage() {
     </main>
   );
 }
-

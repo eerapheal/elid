@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(bookings);
   } catch (error) {
-    console.error('[ELID] Error fetching bookings:', error);
+    console.error('[LID] Error fetching bookings:', error);
     return NextResponse.json(
       { error: 'Failed to fetch bookings' },
       { status: 500 }

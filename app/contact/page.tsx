@@ -60,7 +60,7 @@ export default function ContactPage() {
         toast.error('Failed to send message. Please try again.');
       }
     } catch (error) {
-      console.error('[ELID] Contact error:', error);
+      console.error('[LID] Contact error:', error);
       toast.error('An error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);

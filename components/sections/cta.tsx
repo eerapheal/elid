@@ -10,8 +10,8 @@ export default function CTA() {
   return (
     <section id="contact" className="py-24 md:py-40 relative overflow-hidden">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-primary -z-20" />
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent opacity-50 -z-10 animate-pulse-slow" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent -z-20" />
+      <div className="absolute inset-0 bg-black/10 -z-10" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -21,17 +21,17 @@ export default function CTA() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-5xl md:text-7xl font-black text-white leading-[0.9] tracking-tighter"
+              className="text-6xl md:text-8xl font-black text-primary leading-[0.85] tracking-tighter"
             >
               Ready to Create <br />
-              <span className="text-white/70">Magic?</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-white/50">Magic?</span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl text-white/80 font-medium leading-relaxed max-w-xl mx-auto lg:mx-0"
+              className="text-xl text-primary font-medium leading-relaxed max-w-xl mx-auto lg:mx-0"
             >
               Get in touch with our team today and let's orchestrate something truly extraordinary together.
             </motion.p>
@@ -55,7 +55,7 @@ export default function CTA() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="h-16 px-10 rounded-2xl border-2 border-white/40 text-white hover:bg-white/10 font-bold text-lg transition-all"
+                  className="h-16 px-10 rounded-2xl border-2 border-white/40 text-primary hover:bg-white/10 font-bold text-lg transition-all"
                 >
                   Say Hello
                 </Button>
@@ -84,10 +84,10 @@ export default function CTA() {
                 )}
               >
                 <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <info.icon className="text-white w-6 h-6" />
+                  <info.icon className="text-primary w-6 h-6" />
                 </div>
-                <h3 className="font-black text-white text-lg mb-1">{info.title}</h3>
-                <p className="text-white/70 font-semibold">{info.value}</p>
+                <h3 className="font-black text-primary text-lg mb-1">{info.title}</h3>
+                <p className="text-primary font-semibold">{info.value}</p>
               </motion.div>
             ))}
           </div>

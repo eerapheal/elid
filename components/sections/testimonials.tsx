@@ -3,13 +3,14 @@
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useSiteData } from '@/context/SiteContext';
 
-const testimonials = [
+const defaultTestimonials = [
   {
     id: 1,
     name: 'Ngozi Obi',
     role: 'Wedding Client',
-    content: "ELID made our wedding day absolutely perfect. Every detail was handled with such care and professionalism. We couldn't have asked for better!",
+    content: "LID EVENT made our wedding day absolutely perfect. Every detail was handled with such care and professionalism. We couldn't have asked for better!",
     rating: 5,
     color: 'border-primary/20 bg-primary/5'
   },
@@ -25,7 +26,7 @@ const testimonials = [
     id: 3,
     name: 'Zainab Hassan',
     role: 'Birthday Celebration',
-    content: 'I wanted my birthday to be special, and ELID delivered beyond my expectations. The energy was perfect!',
+    content: 'I wanted my birthday to be special, and LID EVENT delivered beyond my expectations. The energy was perfect!',
     rating: 5,
     color: 'border-accent/20 bg-accent/5'
   },
@@ -33,15 +34,30 @@ const testimonials = [
     id: 4,
     name: 'Chima Eze',
     role: 'Corporate Client',
-    content: 'Working with ELID for our annual conference was a game-changer. Professional, reliable, and delivered exceptional results.',
+    content: 'Working with LID EVENT for our annual conference was a game-changer. Professional, reliable, and delivered exceptional results.',
     rating: 5,
     color: 'border-chart-4/20 bg-chart-4/5'
   },
 ];
 
 export default function Testimonials() {
+  const siteData = useSiteData();
+  const dbTestimonials = siteData?.testimonials || [];
+
+  const displayTestimonials = dbTestimonials.length > 0 
+    ? dbTestimonials.map((t: any, i: number) => ({
+        ...t,
+        id: t._id,
+        name: t.clientName,
+        role: t.clientRole || 'Client',
+        content: t.message,
+        rating: t.rating || 5,
+        color: i % 2 === 0 ? 'border-primary/20 bg-primary/5' : 'border-secondary/20 bg-secondary/5'
+      }))
+    : defaultTestimonials;
+
   return (
-    <section id="testimonials" className="py-24 md:py-40 bg-muted/10 relative overflow-hidden">
+    <section id="testimonials" className="py-24 md:py-40 bg-muted/10 linear-gradient relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-20 text-center">
@@ -67,7 +83,7 @@ export default function Testimonials() {
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {displayTestimonials.map((testimonial: any, index: number) => (
             <motion.div
               key={testimonial.id}
               initial={{ opacity: 0, scale: 0.9 }}
