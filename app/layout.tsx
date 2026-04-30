@@ -9,12 +9,60 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'LID EVENT - Premium Event Planning & Management',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://elidevent.com'),
+  title: {
+    default: 'LID EVENT - Premium Event Planning & Management',
+    template: '%s | LID EVENT'
+  },
   description: 'Exquisite event planning, luxury weddings, and professional entertainment services. Transform your vision into a legacy with LID EVENT.',
-  generator: 'LID EVENT',
+  keywords: ['event planning', 'wedding planner', 'professional dancers', 'ushers', 'modelling services', 'MC', 'Warri events', 'Nigeria events'],
+  authors: [{ name: 'LID EVENT' }],
+  creator: 'LID EVENT',
+  publisher: 'LID EVENT',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'LID EVENT - Premium Event Planning & Management',
+    description: 'Exquisite event planning, luxury weddings, and professional entertainment services.',
+    url: 'https://elidevent.com',
+    siteName: 'LID EVENT',
+    images: [
+      {
+        url: '/og-image.png', // We should ensure this exists or create a placeholder
+        width: 1200,
+        height: 630,
+        alt: 'LID EVENT & MORE',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LID EVENT - Premium Event Planning & Management',
+    description: 'Exquisite event planning, luxury weddings, and professional entertainment services.',
+    images: ['/og-image.png'],
+  },
   icons: {
     icon: '/icon.png',
     apple: '/icon.png',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
