@@ -25,8 +25,35 @@ function question(query) {
 async function main() {
   console.log('\n🔐 Events & More - Admin User Setup\n');
 
+  // Load .env.local if it exists
+  const fs = require('fs');
+  const path = require('path');
+  let envUri = '';
+  try {
+    const envPath = path.join(process.cwd(), '.env.local');
+    if (fs.existsSync(envPath)) {
+      const envContent = fs.readFileSync(envPath, 'utf8');
+      const match = envContent.match(/^MONGODB_URI\s*=\s*["']?([^"'\s]+)["']?/m);
+      if (match) {
+        envUri = match[1];
+      }
+    }
+  } catch (err) {
+    // Ignore errors reading .env.local
+  }
+
   // Get MongoDB URI
-  const mongoUri = await question('MongoDB URI (from .env.local): ');
+  const prompt = envUri 
+    ? `MongoDB URI (default from .env.local): ` 
+    : 'MongoDB URI (from .env.local): ';
+  
+  let mongoUri = await question(prompt);
+  
+  if (!mongoUri && envUri) {
+    mongoUri = envUri;
+    console.log(`Using URI from .env.local`);
+  }
+
   if (!mongoUri) {
     console.error('❌ MongoDB URI is required');
     process.exit(1);
@@ -35,10 +62,7 @@ async function main() {
   try {
     // Connect to MongoDB
     console.log('Connecting to MongoDB...');
-    await mongoose.connect(mongoUri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(mongoUri);
     console.log('✅ Connected to MongoDB\n');
 
     // Get admin credentials
